@@ -1,0 +1,62 @@
+---
+import Default from "@astrojs/starlight/components/Footer.astro";
+
+const isLandingPage = Astro.locals.starlightRoute.entry.data.template === "splash";
+const currentYear = new Date().getFullYear();
+
+const poweredBy = Astro.locals.t("footer.poweredBy");
+---
+
+{isLandingPage ? (
+  <footer class="landing-footer">
+    <div class="landing-footer-content">
+      <p class="powered-by" set:html={poweredBy} />
+      <p class="copyright">&copy; {currentYear} Vindur Games</p>
+    </div>
+  </footer>
+) : (
+  <Default>
+    <slot />
+  </Default>
+)}
+
+<style>
+  .landing-footer {
+    border-top: 1px solid var(--sl-color-hairline);
+    padding: 3rem 1rem 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+
+  .landing-footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .landing-footer p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .landing-footer :global(a) {
+    color: var(--sl-color-text-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+  }
+
+  .landing-footer :global(a:hover) {
+    color: var(--sl-color-white);
+  }
+
+  .copyright {
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-4, var(--sl-color-gray-3));
+  }
+</style>
