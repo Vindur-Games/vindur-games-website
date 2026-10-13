@@ -1,0 +1,36 @@
+:root {
+  --sl-font: "Geist", "Inter", sans-serif, serif;
+  --sl-font-mono: "Geist Mono", monospace;
+}
+
+/* Vertically align theme toggle button with social links and language dropdown in the sidebar */
+
+.sidebar starlight-obsidian-theme-select {
+  align-self: center;
+}
+
+/* Hero background gradient (matching Starlight & Obsidian theme showcase) */
+:root {
+  --sl-hero-color: hsla(258, 61%, 66%, 15%);
+}
+
+html[data-theme="light"] {
+  --sl-hero-color: hsla(257, 70%, 70%, 20%);
+}
+
+[data-has-hero] .page {
+  background:
+    linear-gradient(215deg, var(--sl-hero-color), transparent 40%),
+    radial-gradient(var(--sl-hero-color), transparent 40%) no-repeat -60vw -40vh / 150vw 200vh;
+}
+
+[data-has-hero] header {
+  border-bottom: 1px solid transparent;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+[data-has-hero] .hero > img {
+  filter: drop-shadow(0 0 3rem var(--sl-hero-color));
+}

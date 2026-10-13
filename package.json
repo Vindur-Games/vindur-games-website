@@ -1,0 +1,30 @@
+{
+  "name": "vindur-games-website",
+  "version": "1.0.0",
+  "description": "The official website for *Vindur Games*, a group of independent game developers that like to create awesome stuff!",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "postinstall": "patch-package"
+  },
+  "keywords": [],
+  "type": "module",
+  "devDependencies": {
+    "patch-package": "^8.0.0",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.42.6",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "astro": "^7.3.8",
+    "starlight-blog": "^0.30.0",
+    "starlight-theme-obsidian": "^0.4.1"
+  }
+}

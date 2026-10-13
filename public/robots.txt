@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vindurgames.com/sitemap-index.xml

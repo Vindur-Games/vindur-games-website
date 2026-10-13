@@ -1,0 +1,5 @@
+.directory
+.astro/
+node_modules/
+private-notes/
+dist/
