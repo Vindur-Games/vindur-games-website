@@ -1,21 +1,69 @@
 :root {
-  --sl-font: "Geist", "Inter", sans-serif, serif;
-  --sl-font-mono: "Geist Mono", monospace;
+  /* Fontsource registers the variable fonts as "Geist Variable" / "Geist Mono Variable" */
+  --sl-font: "Geist Variable", "Geist", "Inter Variable", "Inter", sans-serif;
+  --sl-font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, monospace;
 }
 
-/* Vertically align theme toggle button with social links and language dropdown in the sidebar */
+/* ---------- Typography / readability tuning for Geist ---------- */
+:root {
+  /* Geist has a tall x-height, so Starlight's default 1.75 feels loose */
+  --sl-line-height: 1.65;
+  /* Slightly more room for multi-line headings than the default 1.2 */
+  --sl-line-height-headings: 1.25;
+}
 
-.sidebar starlight-obsidian-theme-select {
-  align-self: center;
+body {
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Body text: tiny bit of extra tracking helps Geist at small sizes */
+.sl-markdown-content {
+  letter-spacing: 0.003em;
+}
+
+.sl-markdown-content :is(p, li, blockquote, dd) {
+  text-wrap: pretty; /* avoid single-word orphans on the last line */
+}
+
+/* Headings: Geist is designed to be tightened at larger sizes */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6),
+h1#_top,
+.hero h1 {
+  text-wrap: balance;
+  font-weight: 600;
+}
+
+.sl-markdown-content :is(h1, h2),
+h1#_top {
+  letter-spacing: -0.025em;
+}
+
+.sl-markdown-content :is(h3, h4) {
+  letter-spacing: -0.015em;
+}
+
+.hero h1 {
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+/* Inline code: Geist Mono is wide, so keep tracking neutral and scale with surrounding text.
+   (Code blocks inherit --sl-line-height via Starlight's Expressive Code config.) */
+.sl-markdown-content :not(pre) > code {
+  letter-spacing: 0;
+  font-size: 0.875em; /* scale with surrounding text (headings, small text, etc.) */
 }
 
 /* Hero background gradient (matching Starlight & Obsidian theme showcase) */
 :root {
-  --sl-hero-color: hsla(258, 61%, 66%, 15%);
+  --sl-hero-color: hsla(0deg, 59%, 88%, 5%);
 }
 
 html[data-theme="light"] {
-  --sl-hero-color: hsla(257, 70%, 70%, 20%);
+  --sl-hero-color: hsla(0deg, 60%, 67%, 15%);
 }
 
 [data-has-hero] .page {
