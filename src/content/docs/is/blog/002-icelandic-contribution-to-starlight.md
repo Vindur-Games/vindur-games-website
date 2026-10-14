@@ -44,7 +44,7 @@ bjóða upp á frábært virði fyrir sanngjarnt verð, svo þetta var erfið á
 Átsj. Jæja, ef það var ekki nóg til að heilla þig, þá er ég viss um að þú takir þetta til baka um
 leið og þú sérð [þetta PR sem ég gerði](https://github.com/withastro/starlight/pull/4252):
 
-![](/src/assets/OlisIcelandicContributionToStarlight.png)
+![](../../../../assets/OlisIcelandicContributionToStarlight.png)
 
 **Þetta er í fyrsta sinn sem ég legg mitt af mörkum til open-source hugbúnaðar!** 🥳
 
