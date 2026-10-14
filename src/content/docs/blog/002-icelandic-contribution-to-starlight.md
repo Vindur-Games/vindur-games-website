@@ -43,7 +43,7 @@ a nice experience with Cloudflare as well.
 Ouch. Well, if that wasn't enough to impress you, then I'm sure you'll change your tone once you get
 a load of [this PR I made](https://github.com/withastro/starlight/pull/4252):
 
-![](/src/assets/OlisIcelandicContributionToStarlight.png)
+![](../../../assets/OlisIcelandicContributionToStarlight.png)
 
 **It's my first time contributing to an open-source project!** 🥳
 
