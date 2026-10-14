@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-// import catppuccin from "@catppuccin/starlight";
 import starlightBlog from "starlight-blog";
-import starlightThemeObsidian from "starlight-theme-obsidian";
+import catppuccin from "@catppuccin/starlight";
 
 // https://astro.build/config
 export default defineConfig({
@@ -37,13 +36,9 @@ export default defineConfig({
       routeMiddleware: "./src/routeData.ts",
 
       plugins: [
-        // catppuccin({
-        //   dark: { flavor: "mocha", accent: "sky" },
-        //   light: { flavor: "latte", accent: "sky" },
-        // }),
-
-        starlightThemeObsidian({
-          graph: false,
+        catppuccin({
+          dark: { flavor: "mocha", accent: "flamingo" },
+          light: { flavor: "latte", accent: "flamingo" },
         }),
 
         starlightBlog({
@@ -65,11 +60,18 @@ export default defineConfig({
             readingTime: true,
             words: false,
           },
+
+          navigation: "none",
         }),
       ],
 
-      // make sure the Inter font is included and used across the site
-      customCss: ["@fontsource-variable/inter", "./src/styles/custom.css"],
+      // make sure the Geist fonts (and Inter as a fallback) are included and used across the site
+      customCss: [
+        "@fontsource-variable/geist",
+        "@fontsource-variable/geist-mono",
+        "@fontsource-variable/inter",
+        "./src/styles/custom.css",
+      ],
 
       // i18n
       defaultLocale: "root",
