@@ -1,0 +1,41 @@
+---
+import Default from "@astrojs/starlight/components/Header.astro";
+import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
+
+// On small screens, Starlight only shows social icons inside the mobile menu,
+// which lives in the sidebar. Pages without a sidebar (e.g., splash pages) have
+// no mobile menu, so we render the social icons directly in the header instead.
+const { hasSidebar } = Astro.locals.starlightRoute;
+---
+
+<div class="header-wrapper">
+  <Default>
+    <slot />
+  </Default>
+  {!hasSidebar && (
+    <div class="mobile-social-icons sl-flex md:sl-hidden print:hidden">
+      <SocialIcons />
+    </div>
+  )}
+</div>
+
+<style>
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--sl-nav-gap);
+    height: 100%;
+  }
+
+  /* Let Starlight's default header take up all remaining space */
+  .header-wrapper > :global(.header) {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .mobile-social-icons {
+    gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+</style>
